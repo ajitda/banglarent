@@ -17,7 +17,9 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('type');
+            $table->decimal('price', 8, 2);
             $table->string('image');
+            $table->text('address');
             $table->text('description');
 
             $table->timestamps();
