@@ -90,6 +90,41 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
+
+            <div class="content">
+                <div class="listing_area col-sm-8 col-sm-offset-2" id="room-ads-area" data-test="rs-list">
+                    <div class="listing_area_content">
+                        <div class="hp_title">8,075 rooms to rent in United States</div>
+
+                            <!-- item -->
+                            <div class="listing-item">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <figure>
+                                            <img src="" alt="">
+                                        </figure>
+                                        <div class="listing-item-price">
+                                            $200
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="heading">Cool place for cool people</div>
+                                        <div class="listing-item-desc">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates dicta eius impedit ut, ipsa tempora assumenda, praesentium similique hic dolores dolorum esse, consequuntur sit quaerat numquam earum molestiae maxime eligendi.
+                                        </div>
+                                        <div class="status">Available Now</div>
+                                        <div class="listing-item-member">
+                                            2 Guys
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- end item -->
+                    </div> 
+                </div>
+            </div>
+
+
         </div>
     </body>
 </html>
