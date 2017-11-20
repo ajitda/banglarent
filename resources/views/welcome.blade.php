@@ -12,58 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -91,27 +40,29 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
-
-            <div class="content">
+        </div>
+        <div class="container">
+            <div class="row">
                 <div class="listing_area col-sm-8 col-sm-offset-2" id="room-ads-area" data-test="rs-list">
                     <div class="listing_area_content">
-                        <div class="hp_title">8,075 rooms to rent in United States</div>
-
+                        <div class="total_list">8,075 rooms to rent in United States</div>
                             <!-- item -->
                             <div class="listing-item">
                                 <div class="row">
-                                    <div class="col-sm-4">
-                                        <figure>
-                                            <img src="" alt="">
-                                        </figure>
-                                        <div class="listing-item-price">
-                                            $200
+                                    <div class="col-sm-5">
+                                        <div class="listing-image">
+                                            <figure>
+                                                <img src="{{asset('images/images.jpg')}}" alt="" class="img-responsive">
+                                            </figure>
+                                            <div class="listing-item-price">
+                                                $200
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-7">
                                         <div class="heading">Cool place for cool people</div>
                                         <div class="listing-item-desc">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates dicta eius impedit ut, ipsa tempora assumenda, praesentium similique hic dolores dolorum esse, consequuntur sit quaerat numquam earum molestiae maxime eligendi.
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates dicta eius impedit ut, ipsa tempora assumenda, praesentium similique hic dolores dolorum esse, consequuntur sit quaerat numquam earum molestiae maxime eligendi.</p>
                                         </div>
                                         <div class="status">Available Now</div>
                                         <div class="listing-item-member">
@@ -124,8 +75,7 @@
                     </div> 
                 </div>
             </div>
-
-
         </div>
+        
     </body>
 </html>
