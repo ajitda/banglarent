@@ -23,7 +23,7 @@ return [
         'supporter' => [
             'profile' => 'r,u'
         ],
-        'supplier' => [
+        'subscriber' => [
             'profile' => 'r,u'
         ],
     ],
