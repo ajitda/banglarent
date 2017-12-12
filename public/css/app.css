@@ -8746,3 +8746,18 @@ button.close {
   overflow-y: scroll;
 }
 
+.management-area {
+  position: absolute;
+  top: 5rem;
+  left: 200px;
+  right: 0;
+}
+
+.management-area h1 {
+  margin-top: 0px;
+}
+
+.flex-container {
+  margin: 10px 15px;
+}
+
