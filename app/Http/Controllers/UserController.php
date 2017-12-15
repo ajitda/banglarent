@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
@@ -44,6 +45,7 @@ class UserController extends Controller
         if(Request::has('password') && !empty($request->password)){
             $password = trim($request->password);
         }else{
+          #set the manual password
             $length = 10;
             $keyspace = '123456789abcdefghijklmnopqrstwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             $str = '';
@@ -57,6 +59,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($password);
+        // $user->save();
         if($user->save()){
          return redirect()->route('users.show', $user->id);
         }else{
@@ -102,6 +105,28 @@ class UserController extends Controller
            'name' => 'required|max:255',
             'email'=> 'required|email|unique:users,email,'.$id
         ]);
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if($request->password_options =="auto"){
+
+            $length = 10;
+            $keyspace = '123456789abcdefghijklmnopqrstwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $str = '';
+            $max = mb_strlen($keyspace, '8bit')-1;
+            for($i=0;$i<$length; ++$i){
+                $str = $keyspace[random_int(0, $max)];
+            }
+            $user->password =  Hash::make($str);
+        }elseif($request->password_options =="manual"){
+            $user->password = Hash::make($request->password);
+        }
+        if($user->save()){
+            return redirect()->route('users.show', $user->id);
+        }else{
+            Session::flash('danger', 'Sorry a problem occured while updating this user');
+            return redirect()->route('users.create');
+        }
     }
 
     /**

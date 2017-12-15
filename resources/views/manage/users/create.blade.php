@@ -10,6 +10,7 @@
         <div class="create-user-form">
             <div class="col-sm-8">
                 <form action="{{route('users.store')}}" method="POST">
+                  {{csrf_field()}}
                     <div class="form-group">
                         <label for="name">Name : </label>
                         <input type="text" name="name" id="name" class="form-control">
@@ -20,10 +21,11 @@
                     </div>
                     <div class="form-group">
                         <label for="password">Password : </label>
-                        <input type="text" name="password" id="password" class="form-control" v-if="!auto_password" placeholder="Manually give a password to this user">
-                        <div class="checkbox m-l-20">
-                            <input type="checkbox" name="auto_generate" v-model="auto_password"> Auto Generate Password
-                        </div>
+                          <input type="password" name="password" id="password" class="form-control" v-if="!auto_password" placeholder="Manually give a password to this user">
+
+                    </div>
+                    <div class="checkbox">
+                      <label><input type="checkbox" name="auto_generate" v-model="auto_password" value="password"> Auto Generate Password</label>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>

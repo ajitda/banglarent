@@ -21,19 +21,19 @@
                         <input type="email" name="email" id="email" class="form-control" value="{{$user->email}}">
                     </div>
                     <div class="form-group" class="radio-group" >
-                        <label for="password">Password : </label>
-
-                            <input type="radio" name="password" value="keep" v-model="password_options"> Do not Change Password
-
-
-                            <input type="radio" name="password" value="auto" v-model="password_options"> Auto-Generate New Password
-
-
-                            <input type="radio" name="password" value="manual" v-model="password_options"> Manually Set New Password
-
-                            <input type="password" name="password" id="password" class="form-control" v-if="!password_options =='manual'" placeholder="Manually give a password to this user">
-
-
+                      <label for="password">Password : </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="password" value="keep" v-model="password_options"> Do not Change Password
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="password" value="auto" v-model="password_options"> Auto-Generate New Password
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="password" value="manual" v-model="password_options"> Manually Set New Password
+                          <p class="control">
+                            <input type="text" name="password" id="password" class="form-control" v-if="!password_options =='manual'" placeholder="Manually give a password to this user">
+                          </p>
+                        </label>
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
@@ -47,7 +47,7 @@
         var app = new Vue({
            el: '#app',
             data:{
-                password_options:'keep'
+                password_options:'manual'
             }
         });
     </script>
