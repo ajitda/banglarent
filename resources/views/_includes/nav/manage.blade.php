@@ -11,7 +11,11 @@
         </p>
         <ul class="menu">
             <li><a href="{{route('users.index')}}">Manage Users</a></li>
-            <li><a href="#">Roles &amp; Permissions</a></li>
+            <li><a href="#" class="has-submenu ">Roles &amp; Permissions</a>
+            <ul class="submenu">
+                <li><a href="{{route('roles.index')}}" class="">Roles</a></li>
+            </ul>
+            </li>
         </ul>
     </aside>
 </div>

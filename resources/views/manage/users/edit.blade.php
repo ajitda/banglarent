@@ -23,7 +23,7 @@
                     <div class="form-group" class="radio-group" >
                       <label for="password">Password : </label>
                         <label class="radio-inline">
-                          <input type="radio" name="password" value="keep" v-model="password_options"> Do not Change Password
+                          <input type="radio" name="password" value="keep" v-model="password_options" checked> Do not Change Password
                         </label>
                         <label class="radio-inline">
                           <input type="radio" name="password" value="auto" v-model="password_options"> Auto-Generate New Password
