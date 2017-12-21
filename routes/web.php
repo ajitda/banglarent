@@ -22,6 +22,7 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator|edito
     Route::get('/', 'ManageController@index');
    Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
    Route::resource('/roles', 'RoleController', ['except' => 'destroy']);
+   Route::resource('/permissions', 'PermissionController', ['except' => 'destroy']);
     Route::resource('/users', 'UserController');
 });
 
