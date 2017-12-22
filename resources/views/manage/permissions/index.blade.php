@@ -25,9 +25,10 @@
 						@foreach($permissions as $permission)
 						<tr>
 							<td>{{$permission->id}}</td>
+							<td>{{$permission->display_name}}</td>
 							<td>{{$permission->name}}</td>
-							<td>{{$permission->slug}}</td>
 							<td>{{$permission->description}}</td>
+							<td><a href="{{route('permissions.show', $permission->id)}}" class="btn btn-warning btn-sm m-r-10" >View</a><a href="{{route('permissions.edit', $permission->id)}}" class="btn btn-danger btn-sm">Edit</a></td>
 						</tr>
 						@endforeach
 					</tbody>
