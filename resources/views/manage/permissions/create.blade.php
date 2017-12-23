@@ -30,9 +30,41 @@
 								<label for="description">Description</label>
 								<input type="text" name="description" id="description" class="form-control">
 							</div>
-							<div class="form-group" v-if="permissionType == 'c">
-								
+							
+							<div class="form-group" v-if="permissionType == 'crud">
+								<label for="resource"> Resource</label>
+								<input type="text" v-model="resource" name="resource" id="resource" class="form-control">
 							</div>
+							<div class="row" v-if="permissionType == 'crud'">
+								<div class="col-sm-4">
+									<div class="form-group" v-if="permissionType == 'crud'">
+										<input type="checkbox" v-model="crudSelected" native-value="create"> Create
+										<input type="checkbox" v-model="crudSelected" native-value="read"> Read
+										<input type="checkbox" v-model="crudSelected" native-value="update"> Update
+										<input type="checkbox" v-model="crudSelected" native-value="delete"> Delete
+									</div>
+								</div>
+								<input type="hidden" name="crud_selected" :value="crudSelected">
+								<div class="col-sm-8">
+									<table class="table table-bordered" v-if="resource.length >= 3 && crudSelected.length > 0 ">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Slug</th>
+												<th>Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr v-for="item in crudSelected">
+												<td v-text="crudName(item)"></td>
+												<td v-text="crudSlug(item)"></td>
+												<td v-text="crudDescription(item)"></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<button class="btn btn-success">Create Permissions</button>
 						</form>
 					</div>
 				</div>
