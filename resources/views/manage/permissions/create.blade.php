@@ -9,16 +9,18 @@
 				<a href="{{route('permissions.index')}}" class="btn btn-primary">Back</a>
 			</div>
 		</div>
+		
 		<div class="row">
+
 			<div class="col-sm-12">
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<form action="{{route('permissions.store')}}" method="POST">
 							<div class="form-group">
-								
-								<input type="radio" id="basic" native-value="basic" v-model="permissionType"> Basic Permission
-								
-								<input type="radio" id="crud" native-value="crud" v-model="permissionType"> CRUD Permission
+								<label for="basic" class="sr-only"></label>
+								<input type="radio" id="basic" name="permission_type" value="basic" v-model="permissionType"> Basic Permission
+								<label for="crud" class="sr-only"></label>
+								<input type="radio" id="crud" name="permission_type" value="crud" v-model="permissionType"> CRUD Permission
 							</div>
 							<div class="form-group" v-if="permissionType == 'basic'">
 								<label for="display_name">Name (Display Name)</label>
@@ -76,7 +78,7 @@
 @endsection
 
 @section('scripts')
-	<script>
+<script>
 	var app = new Vue({
 		el: '#app',
 		data: {
